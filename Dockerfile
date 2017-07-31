@@ -21,6 +21,4 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 WORKDIR /root/repos
 VOLUME /root/repos
 
-ENTRYPOINT ["gradle"]
-
-CMD ["-version"]
+CMD ["gradle"]
