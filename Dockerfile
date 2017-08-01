@@ -12,12 +12,15 @@ RUN apt-get clean \
     && curl -fl https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -o gradle-bin.zip && unzip ./gradle-bin.zip && rm -f ./gradle-bin.zip \
     && mv gradle-${GRADLE_VERSION} /usr/share/gradle-${GRADLE_VERSION} \
     && apt-get purge --auto-remove curl unzip \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /root/repos
 
 ENV JAVA_HOME /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 ENV GRADLE_HOME /usr/share/gradle-${GRADLE_VERSION} 
 ENV PATH $PATH:$GRADLE_HOME/bin
 
-VOLUME /root/repos
+WORKDIR /repos
+VOLUME /repos
+ENTRYPOINT ["gradle"]
 
-CMD ["gradle"]
+CMD ["-version"]

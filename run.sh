@@ -1,1 +1,1 @@
-docker run paperinik/rpi-gradle -v /media/usbraid/docker/gradle:/root/repos test
+docker run -v /media/usbraid/docker/gradle:/root/repos -it paperinik/rpi-gradle
