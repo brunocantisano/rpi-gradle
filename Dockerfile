@@ -19,8 +19,8 @@ ENV JAVA_HOME /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 ENV GRADLE_HOME /usr/share/gradle-${GRADLE_VERSION} 
 ENV PATH $PATH:$GRADLE_HOME/bin
 
-WORKDIR /repos
-VOLUME /repos
+WORKDIR /root/repos
+VOLUME /root/repos
 ENTRYPOINT ["gradle"]
 
 CMD ["-version"]
