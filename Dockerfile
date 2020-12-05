@@ -1,7 +1,7 @@
-FROM paperinik/rpi-java8:latest
+FROM balenalib/raspberrypi3-debian-openjdk:11
 MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
 
-ENV GRADLE_VERSION 2.0
+ENV GRADLE_VERSION 6.7.1
 
 RUN apt-get clean \
     && apt-get update \
